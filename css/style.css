@@ -647,9 +647,9 @@ section {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-  .nav__logo,
-  .nav__hamburger { position: relative; z-index: 1001; }
-  .nav__hamburger { display: flex; }
+  button.nav__logo,
+  .music-player { display: none !important; }
+  .nav__hamburger { position: relative; z-index: 1001; display: flex; margin-left: auto; }
 
   .nav__links {
     display: none;
@@ -694,7 +694,7 @@ section {
     order: 3;
     font-size: 0.65rem;
     letter-spacing: 0.16em;
-    margin-top: 1.75rem;
+    margin-top: 2.75rem;
     margin-bottom: 0;
   }
 
