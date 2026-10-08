@@ -45,6 +45,7 @@ if (musicToggle && musicPlayer) {
 
     musicToggle.addEventListener('click', () => {
       musicToggle.classList.remove('attention');
+      musicPlayer.classList.add('open');
       if (!ready) {
         wantPlay = true;
         return;

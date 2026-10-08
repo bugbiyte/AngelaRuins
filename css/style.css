@@ -185,6 +185,27 @@ a:not(.btn):not(.nav__logo):not(.nav__links a):not(.nav__cta):hover {
 }
 .nav__logo:hover { color: var(--cream); }
 
+.music-player {
+  position: fixed;
+  right: 1rem;
+  top: 4.75rem;
+  width: min(320px, calc(100vw - 2rem));
+  height: 60px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-1rem);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.music-player.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .eq {
   display: inline-flex;
   align-items: flex-end;
