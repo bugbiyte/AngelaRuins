@@ -14,7 +14,13 @@
   </head>
   <body>
     <nav class="nav" id="nav">
-      <a href="#top" class="nav__logo" aria-label="Home">
+      <button
+        type="button"
+        class="nav__logo attention"
+        id="music-toggle"
+        aria-label="Play music"
+        aria-pressed="false"
+      >
         <span class="eq">
           <span class="eq__bar"></span>
           <span class="eq__bar"></span>
@@ -22,7 +28,17 @@
           <span class="eq__bar"></span>
           <span class="eq__bar"></span>
         </span>
-      </a>
+        <span class="nav__music-label" id="music-label">Play music</span>
+      </button>
+      <iframe
+        id="music-player"
+        title="Background music"
+        allow="autoplay"
+        tabindex="-1"
+        aria-hidden="true"
+        style="position: fixed; left: -9999px; bottom: 0; width: 300px; height: 120px; border: 0"
+        src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&hide_tracklist=1&feed=%2Fangela_ruins%2Fserendipity-volume-1%2F"
+      ></iframe>
       <button
         class="nav__hamburger"
         id="hamburger"
@@ -37,7 +53,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#mixes">DJ Mixes</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact" class="nav__cta">Say Hello</a></li>
       </ul>
     </nav>
@@ -46,7 +61,7 @@
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <p class="hero__eyebrow">
-          Vinyl DJ &nbsp;·&nbsp; Music Enthusiast &nbsp;·&nbsp; Former Editor
+          DJ &nbsp;·&nbsp; Vinyl Enthusiast &nbsp;·&nbsp; Former Music Editor
         </p>
         <h1 class="hero__name">Angela<br /><em>Ruins</em></h1>
         <p class="hero__location">Bay Area, California</p>
@@ -76,16 +91,16 @@
               <em>Last.fm</em>.
             </p>
             <p>
-              These days she works at a tech company as a QA software tester
-              while also exploring front-end web development. Outside of work,
-              she hosts a monthly vinyl DJ show
+              These days, she works in tech as a QA bug wrangler with a focus in
+              Software Web Development. When not chasing bugs, she prepares
+              vinyl sets for her radio show called
               <a
                 href="https://hydefm.com/residents/angela-ruins/"
                 target="_blank"
                 rel="noopener"
                 >Crossfade</a
-              >
-              on HydeFM.
+              >, a monthly show where she digs into the darker sounds of the
+              electronic spectrum.
             </p>
             <div class="about__links">
               <a
@@ -94,10 +109,29 @@
                 rel="noopener"
                 >HydeFM</a
               >
+              <a
+                href="https://www.mixcloud.com/angela_ruins/"
+                target="_blank"
+                rel="noopener"
+                >Mixcloud</a
+              >
+              <a
+                href="https://soundcloud.com/bugbiyte"
+                target="_blank"
+                rel="noopener"
+                >SoundCloud</a
+              >
+              <a
+                href="https://www.youtube.com/playlist?list=PLVH97Ky1Lmrg"
+                target="_blank"
+                rel="noopener"
+                >Last.fm Video Interviews</a
+              >
             </div>
           </div>
         </div>
       </div>
+      <a href="#mixes" class="hero__scroll" aria-label="Scroll down">↓</a>
     </section>
 
     <!-- ============ DJ MIXES ============ -->
@@ -180,12 +214,17 @@
               allow="autoplay"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2106575844&color=%23c9a44a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
             ></iframe>
+            <div class="mix-card__label">
+              <p class="mix-card__show">Crossfade with Angela Ruins</p>
+              <p class="mix-card__guest">feat. Tobias Berblinger</p>
+            </div>
           </div>
         </div>
         <div class="mixes__more">
           <a href="djmixes.html" class="btn btn--outline">All Mixes</a>
         </div>
       </div>
+      <a href="#projects" class="hero__scroll" aria-label="Scroll down">↓</a>
     </section>
 
     <!-- ============ PROJECTS ============ -->
@@ -241,54 +280,7 @@
           </article>
         </div>
       </div>
-    </section>
-
-    <!-- ============ RESUME ============ -->
-    <section class="resume" id="resume">
-      <div class="container">
-        <span class="label">Resume</span>
-        <h2>QA Software Engineer</h2>
-        <div class="resume__inner">
-          <div class="resume__experience">
-            <h3>Experience</h3>
-
-            <div class="resume__entry">
-              <div class="resume__entry-header">
-                <strong>QA Software Engineer</strong>
-                <span class="resume__years">2022 — Present</span>
-              </div>
-              <p class="resume__company">Apple &nbsp;·&nbsp; Cupertino, CA</p>
-              <p class="resume__detail">
-                Add your key responsibilities and accomplishments here.
-              </p>
-            </div>
-
-            <div class="resume__entry">
-              <div class="resume__entry-header">
-                <strong>Previous Role</strong>
-                <span class="resume__years">20XX — 20XX</span>
-              </div>
-              <p class="resume__company">Company Name</p>
-              <p class="resume__detail">
-                Add your key responsibilities and accomplishments here.
-              </p>
-            </div>
-          </div>
-
-          <div class="resume__skills">
-            <h3>Skills</h3>
-            <ul>
-              <li>Front End & Software Web Development</li>
-              <li>QA/UAT Testing</li>
-              <li>API Testing</li>
-              <li>Automation / Playwright</li>
-              <li>JavaScript (Node.JS)</li>
-              <li>React</li>
-              <li>Git &amp; GitHub</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a href="#contact" class="hero__scroll" aria-label="Scroll down">↓</a>
     </section>
 
     <!-- ============ CONTACT ============ -->
@@ -297,8 +289,8 @@
         <span class="label">Contact</span>
         <h2 class="contact__heading">Say Hello</h2>
         <p class="contact__sub">
-          Got a project to collaborate on, a mix to share, or just want to
-          connect?
+          Like my style? Wanna be a guest on my show? Booking inquiries? Let's
+          connect!
         </p>
         <a href="mailto:thakillerbee@gmail.com" class="btn btn--accent"
           >Send a Message</a
@@ -312,6 +304,7 @@
       </div>
     </footer>
 
+    <script src="https://widget.mixcloud.com/media/js/widgetApi.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
