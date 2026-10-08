@@ -653,16 +653,28 @@ section {
 
   .nav__links {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: #000;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    min-width: 200px;
+    padding: 1.25rem 1.5rem;
+    background: rgba(14, 11, 7, 0.97);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.75rem;
+    align-items: flex-end;
+    gap: 1.1rem;
     z-index: 999;
   }
-  .nav__links.open { display: flex; }
+  .nav__links.open {
+    display: flex;
+    animation: menu-drop 0.2s ease-out;
+  }
+  @keyframes menu-drop {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .nav__links a {
     font-size: 0.8rem;
     letter-spacing: 0.16em;
@@ -676,9 +688,9 @@ section {
   }
   .hero__eyebrow {
     order: 3;
-    font-size: 0.58rem;
+    font-size: 0.65rem;
     letter-spacing: 0.16em;
-    margin-top: 0.9rem;
+    margin-top: 1.75rem;
     margin-bottom: 0;
   }
 
